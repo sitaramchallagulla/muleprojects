@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:s3="http://www.mulesoft.org/schema/mule/s3" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/s3 http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd">
+	<s3:config name="Amazon_S3_Configuration" doc:name="Amazon S3 Configuration" doc:id="e828eba6-fcab-4010-a8d6-8a365bd6226e" >
+		<s3:basic-connection accessKey="test" secretKey="test" />
+	</s3:config>
+	<flow name="testmulepaletteFlow" doc:id="28d676e5-c9a1-419c-bccb-950d87f2f386" >
+		<s3:list-objects doc:name="List objects" doc:id="c8eac57c-30a3-448b-bf66-e89df48c8184" config-ref="Amazon_S3_Configuration" bucketName="test"/>
+	</flow>
+</mule>
